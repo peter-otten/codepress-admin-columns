@@ -1,0 +1,22 @@
+{
+  "name": "dtcmedia/wp-startup",
+  "description": "codepress-admin-column",
+  "type": "wp-startup",
+  "authors": [
+    {
+      "name": "Peter Otten",
+      "homepage": "http://www.dtcmedia.nl",
+      "role": "Author"
+    }
+  ],
+  "repositories": [
+    {"type": "composer", "url": "https://packages.dtcmediainternet.nl/repo/private/"},
+    {"type": "composer", "url": "https://packages.dtcmediainternet.nl/repo/packagist/"},
+    {"packagist": false},
+    {"type":"composer","url":"https://wpackagist.org"}
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "wpackagist-plugin/codepress-admin-columns": "*"
+  }
+}
