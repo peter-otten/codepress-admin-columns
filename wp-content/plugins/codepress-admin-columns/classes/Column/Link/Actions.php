@@ -1,20 +1,30 @@
 <?php
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-
 /**
+ * CPAC_Column_Link_Actions
+ *
  * @since 2.0
  */
-class AC_Column_Link_Actions extends AC_Column {
+class CPAC_Column_Link_Actions extends CPAC_Column {
 
-	public function __construct() {
-		$this->set_type( 'column-actions' );
-		$this->set_label( __( 'Actions', 'codepress-admin-columns' ) );
+	/**
+	 * @see CPAC_Column::init()
+	 * @since 2.2.1
+	 */
+	public function init() {
+
+		parent::init();
+
+		// Properties
+		$this->properties['type']	 	= 'column-actions';
+		$this->properties['label']	 	= __( 'Actions', 'codepress-admin-columns' );
 	}
 
-	public function get_value( $id ) {
+	/**
+	 * @see CPAC_Column::get_value()
+	 * @since 2.0
+	 */
+	function get_value( $id ) {
+
 		$bookmark = get_bookmark( $id );
 
 		return $this->get_column_value_actions( $bookmark );
@@ -28,10 +38,9 @@ class AC_Column_Link_Actions extends AC_Column {
 	 * @since 1.4.2
 	 *
 	 * @param object $link
-	 *
 	 * @return string Actions
 	 */
-	public function get_column_value_actions( $link ) {
+	private function get_column_value_actions( $link ) {
 		$actions = array();
 
 		$edit_link = get_edit_bookmark_link( $link );
@@ -41,5 +50,4 @@ class AC_Column_Link_Actions extends AC_Column {
 
 		return implode( ' | ', $actions );
 	}
-
 }

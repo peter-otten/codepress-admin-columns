@@ -123,16 +123,16 @@
     },
     {
         "name": "wpackagist-plugin/codepress-admin-columns",
-        "version": "3.0",
-        "version_normalized": "3.0.0.0",
+        "version": "2.5.6.4",
+        "version_normalized": "2.5.6.4",
         "source": {
             "type": "svn",
             "url": "https://plugins.svn.wordpress.org/codepress-admin-columns/",
-            "reference": "tags/3.0"
+            "reference": "tags/2.5.6.4"
         },
         "dist": {
             "type": "zip",
-            "url": "https://downloads.wordpress.org/plugin/codepress-admin-columns.3.0.zip",
+            "url": "https://downloads.wordpress.org/plugin/codepress-admin-columns.2.5.6.4.zip",
             "reference": null,
             "shasum": null,
             "mirrors": [

@@ -1,31 +1,28 @@
 <?php
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-
 /**
+ * CPAC_Column_Media_Height
+ *
  * @since 2.0
  */
-class AC_Column_Media_Height extends AC_Column_Media_Meta {
+class CPAC_Column_Media_Height extends CPAC_Column {
 
-	public function __construct() {
-		parent::__construct();
+	public function init() {
+		parent::init();
 
-		$this->set_type( 'column-height' );
-		$this->set_label( __( 'Height', 'codepress-admin-columns' ) );
+		$this->properties['type'] = 'column-height';
+		$this->properties['label'] = __( 'Height', 'codepress-admin-columns' );
 	}
 
-	public function get_value( $id ) {
+	function get_value( $id ) {
 		$value = $this->get_raw_value( $id );
 
 		return $value ? $value . 'px' : $this->get_empty_char();
 	}
 
-	public function get_raw_value( $id ) {
-		$value = parent::get_raw_value( $id );
+	function get_raw_value( $id ) {
+		$meta = get_post_meta( $id, '_wp_attachment_metadata', true );
 
-		return ! empty( $value['height'] ) ? $value['height'] : false;
+		return ! empty( $meta['height'] ) ? $meta['height'] : false;
 	}
-
 }

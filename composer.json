@@ -17,6 +17,6 @@
   ],
   "require": {
     "php": ">=7.0.0",
-    "wpackagist-plugin/codepress-admin-columns": "*"
+    "wpackagist-plugin/codepress-admin-columns": "^2.5"
   }
 }
